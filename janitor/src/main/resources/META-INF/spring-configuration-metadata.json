@@ -1,0 +1,22 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.jhxapi.spring.boot.janitor.JanitorProperties",
+      "name": "spring.janitor",
+      "type": "com.jhxapi.spring.boot.janitor.JanitorProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.jhxapi.spring.boot.janitor.JanitorProperties",
+      "name": "spring.janitor.packages",
+      "type": "java.util.Set<java.lang.String>"
+    },
+    {
+      "sourceType": "com.jhxapi.spring.boot.janitor.JanitorProperties",
+      "name": "spring.janitor.path",
+      "type": "com.jhxapi.spring.boot.janitor.entity.Path"
+    }
+  ]
+}
