@@ -15,4 +15,10 @@ public @interface JanitorBannister {
 	 */
 	boolean value() default false;
 	
+	/**
+	 * 拦截器处理器的名称
+	 * @return
+	 */
+	String name() default "";
+	
 }

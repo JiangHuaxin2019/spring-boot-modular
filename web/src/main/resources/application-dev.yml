@@ -1,5 +1,25 @@
 spring:
-  datasource:
-    name: root
-    password: 123
-    url: jdbc:mysql://127.0.0.1:3306/web?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    shardingsphere:
+        datasource:
+            names: ds0,ds1
+            ds0:
+                driverClassName: com.mysql.cj.jdbc.Driver
+                password: 123
+                type: com.zaxxer.hikari.HikariDataSource
+                jdbcUrl: jdbc:mysql://localhost:3306/ds0?serverTimezone=UTC
+                username: root
+            ds1:
+                driverClassName: com.mysql.cj.jdbc.Driver
+                password: 123
+                type: com.zaxxer.hikari.HikariDataSource
+                jdbcUrl: jdbc:mysql://localhost:3306/ds1?serverTimezone=UTC
+                username: root
+        sharding:
+          tables:
+            user:
+              actualDataNodes: ds${0..1}.user
+              databaseStrategy:
+                inline:
+                  shardingColumn: id
+                  algorithmExpression: ds${id % 2}
+        

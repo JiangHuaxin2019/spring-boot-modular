@@ -45,7 +45,7 @@ public class JanitorAutoInterceptorConfiguration implements WebMvcConfigurer {
 
 	@Override
 	public void configurePathMatch(PathMatchConfigurer configurer) {
-
+		
 	}
 
 	@Override
